@@ -38,7 +38,7 @@
 // |  |  |  |  |  |  |  |              | |      |      |      |        |          | |
                         bindings = <
    &trans &trans &trans &trans &trans &trans                   &trans  &trans  &trans  &trans    &trans    &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &C_PREV &C_PLAY &C_NEXT &C_VOL_UP &C_VOL_DN &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &kp C_PREV &kp C_PLAY &kp C_NEXT &kp C_VOL_UP &kp C_VOL_DN &trans
    &trans &trans &trans &trans &trans &trans &trans     &trans &trans  &trans  &trans  &trans    &trans    &trans
    &trans &trans &trans &trans &trans &trans                   &trans  &trans  &trans  &trans    &trans    &trans
    &trans        &trans &trans &trans &trans &trans     &trans &trans  &trans  &trans  &trans              &trans
@@ -54,11 +54,11 @@
 // |  |  |  |  |  |  |                   | |     |      |       |       | |
 // |  |  |  |  |  |  |  |              | | |     |      |       |       | |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans                   &trans &trans      &trans      &trans       &MINUS        &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans      &UP_ARROW   &trans       &trans        &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &LEFT_ARROW &DOWN_ARROW &RIGHT_ARROW &SINGLE_QUOTE &trans
-   &trans &trans &trans &trans &trans &trans                   &trans &trans      &trans      &trans       &trans        &trans
-   &trans        &trans &trans &trans &trans &trans     &trans &trans &trans      &trans      &trans                     &trans
+   &trans &trans &trans &trans &trans &trans                   &trans &trans         &trans         &trans          &MINUS           &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans         &kp UP_ARROW   &trans          &trans           &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp SINGLE_QUOTE &trans
+   &trans &trans &trans &trans &trans &trans                   &trans &trans         &trans         &trans          &trans           &trans
+   &trans        &trans &trans &trans &trans &trans     &trans &trans &trans         &trans         &trans                           &trans
                         >;
 
                 };
