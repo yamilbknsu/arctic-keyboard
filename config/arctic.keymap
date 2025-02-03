@@ -13,50 +13,72 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        display-name = "Base";
 // -----------------------------------------------------------------------------------------
-// | `~     |  1      |  2   |  3      |  4     |  5   |                                      |  6  |    7      |  8  |  9  |  0   | ???  |
-// | TAB    |  Q      |  W   |  E      |  R     |  T   | DEL |              | BKS             |  Y  |    U      |  I  |  O  |  P   | ???? |
-// | ESC    |  A      |  S   |  D      |  F     |  G   |  [                 |  ]              |  H  |    J      |  K  |  L  |  ;   | ???? |
-// | SHIFT  |  Z      |  X   |  C      |  V     |  B   |                                      |  N  |    M      |  ,  |  .  |  \   | ???? |
-// | CTRL   | FN      |      | ALT     | CMD    | UPP  | SPC |              | ENT             | LWR |   ???     | ??? |     | CTRL | ???? |
+// | `~     |  1      |  2   |  3      |  4     |  5   |                                      |  6  |    7      |  8  |  9  |  0   | PLUS   |
+// | TAB    |  Q      |  W   |  E      |  R     |  T   | DEL |              | BKS             |  Y  |    U      |  I  |  O  |  P   | HOME   |
+// | ESC    |  A      |  S   |  D      |  F     |  G   |  [                 |  ]              |  H  |    J      |  K  |  L  |  ;   | END    |
+// | SHIFT  |  Z      |  X   |  C      |  V     |  B   |                                      |  N  |    M      |  ,  |  .  |  \   | PGUP   |
+// | CTRL   | FN      |      | ALT     | CMD    | UPP  | SPC |              | ENT             | LWR |   ALT     | CMD |     | CTRL | PGDOWN |
                         bindings = <
-   &kp GRAVE &kp N1    &kp N2 &kp N3    &kp N4   &kp N5 &trans               &trans            &kp N6  &kp N7    &kp N8     &kp N9    &kp N0  &kp ESC
-   &kp TAB   &kp Q     &kp W  &kp E     &kp R    &kp T  &kp DEL              &kp BSPC          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp BSPC
-   &kp ESC   &kp A     &kp S  &kp D     &kp F    &kp G  &kp LEFT_BRACKET     &kp RIGHT_BRACKET &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-   &kp LSHFT &kp Z     &kp X  &kp C     &kp V    &kp B  &trans               &trans            &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-   &kp LCTRL &kp GLOBE &trans &kp LALT  &kp LGUI &mo 1  &kp SPACE            &kp RET           &mo 2   &kp RALT 
+   &kp GRAVE &kp N1    &kp N2 &kp N3    &kp N4   &kp N5                                        &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp PLUS
+   &kp TAB   &kp Q     &kp W  &kp E     &kp R    &kp T  &kp DEL              &kp BSPC          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp HOME
+   &kp ESC   &kp A     &kp S  &kp D     &kp F    &kp G  &kp LEFT_BRACKET     &kp RIGHT_BRACKET &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp END
+   &kp LSHFT &kp Z     &kp X  &kp C     &kp V    &kp B                                         &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp PAGE_UP
+   &kp LCTRL &kp GLOBE        &kp LALT  &kp LGUI &mo 1  &kp SPACE            &kp RET           &mo 2   &kp RALT  &kp RGUI            &kp RCTRL &kp PAGE_DOWN
                         >;
                 };
                 raise_layer {
+                        display-name = "Raise";
 // -----------------------------------------------------------------------------------------
-// |  |  |  |  |  |  |                   | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
-// |  |  |  |  |  |  |                   | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
+// |  |  |  |  |  |  |                   |      |      |      |        |          | |
+// |  |  |  |  |  |  |  |              | | PREV | PLAY | NEXT | VOL UP | VOL DOWN | |
+// |  |  |  |  |  |  |  |              | |      |      |      |        |          | |
+// |  |  |  |  |  |  |                   |      |      |      |        |          | |
+// |  |  |  |  |  |  |  |              | |      |      |      |        |          | |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans                   &trans  &trans  &trans  &trans    &trans    &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &C_PREV &C_PLAY &C_NEXT &C_VOL_UP &C_VOL_DN &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &trans  &trans  &trans  &trans    &trans    &trans
+   &trans &trans &trans &trans &trans &trans                   &trans  &trans  &trans  &trans    &trans    &trans
+   &trans        &trans &trans &trans &trans &trans     &trans &trans  &trans  &trans  &trans              &trans
                         >;
                 };
 
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  |  |  |  |  |  |                   | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
-// |  |  |  |  |  |  |                   | | | | | | |
-// |  |  |  |  |  |  |  |              | | | | | | | |
+                        display-name = "Lower";
+                        // -----------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |                   | |     |      |       | MINUS | |
+// |  |  |  |  |  |  |  |              | | |     |  UP  |       |       | |
+// |  |  |  |  |  |  |  |              | | | LEFT| DOWN | RIGHT | QUOTE | |
+// |  |  |  |  |  |  |                   | |     |      |       |       | |
+// |  |  |  |  |  |  |  |              | | |     |      |       |       | |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans                   &trans &trans      &trans      &trans       &MINUS        &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans      &UP_ARROW   &trans       &trans        &trans
+   &trans &trans &trans &trans &trans &trans &trans     &trans &trans &LEFT_ARROW &DOWN_ARROW &RIGHT_ARROW &SINGLE_QUOTE &trans
+   &trans &trans &trans &trans &trans &trans                   &trans &trans      &trans      &trans       &trans        &trans
+   &trans        &trans &trans &trans &trans &trans     &trans &trans &trans      &trans      &trans                     &trans
                         >;
+
                 };
         };
 };
+
+// TEMPLATE
+// --------
+//                 raise_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  |  |  |  |  |  |                   | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+// // |  |  |  |  |  |  |                   | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+//                         bindings = <
+//    &trans &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans
+//    &trans        &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans        &trans
+//                         >;
+//                 };
