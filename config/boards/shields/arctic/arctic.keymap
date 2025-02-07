@@ -54,11 +54,11 @@
 // |  |  |  |  |  |  |                   | |     |      |       |       | |
 // |  |  |  |  |  |  |  |              | | |     |      |       |       | |
                         bindings = <
-   &trans &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans &trans         &trans         &trans          &kp MINUS           &trans
+   &sys_reset &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans &trans         &trans         &trans          &kp MINUS           &sys_reset
    &trans &trans        &trans       &trans        &trans        &trans       &trans        &bt BT_CLR &trans &trans         &kp UP_ARROW   &trans          &trans           &trans
    &trans &trans        &trans       &trans        &trans        &trans       &trans        &trans     &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp SINGLE_QUOTE &trans
    &trans &trans        &trans       &trans        &trans        &trans                                &trans &trans         &trans         &trans          &trans           &trans
-   &trans               &trans       &trans        &trans        &trans       &trans        &trans     &trans &trans         &trans         &trans                           &trans
+   &bootloader               &trans       &trans        &trans        &trans       &trans        &trans     &trans &trans         &trans         &trans                           &bootloader
                         >;
 
                 };
