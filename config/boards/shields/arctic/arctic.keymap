@@ -25,7 +25,7 @@
    &kp TAB   &kp Q     &kp W  &kp E     &kp R    &kp T  &kp DEL                                                 &kp BSPC          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp HOME
    &kp ESC   &kp A     &kp S  &kp D     &kp F    &kp G  &kp LEFT_BRACKET                                        &kp RIGHT_BRACKET &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp END
    &kp LSHFT &kp Z     &kp X  &kp C     &kp V    &kp B                                                                            &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp PAGE_UP
-   &kp LCTRL &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT            &kp LALT  &kp LGUI &mo 1  &mt LA(L_SHIFT) SPACE    &kp RET           &mo 2   &kp RALT  &kp RGUI            &kp RCTRL &kp PAGE_DOWN
+   &kp LCTRL &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT            &kp LALT  &kp LGUI &mo 1  &mt LA(LSHIFT) SPACE    &kp RET           &mo 2   &kp RALT  &kp RGUI            &kp RCTRL &kp PAGE_DOWN
                         >;
                 };
                 raise_layer {
@@ -48,17 +48,17 @@
                 lower_layer {
                         display-name = "Lower";
                         // -----------------------------------------------------------------------------------------
-// |  |  |  |  |  |  |                      |     |     |      |       | MINUS | RESET |
-// |  |  |  |  |  |  |  |                |  |     |     |  UP  |       |       |       |
-// |  |  |  |  |  |  |  |                |  |     | LEFT| DOWN | RIGHT | QUOTE |       |
-// |  |  |  |  |  |  |                      |     |     |      |       |       |       |
-// |  |  |  |  |  |  |  |                |  |     |     |      |       |       |  BOOT |
+// |  |  |  |  |  |  |                      |      |      |       |       | MINUS | RESET |
+// |  |  |  |  |  |  |  |                |  |      |  UP  |       |       |       |       |
+// |  |  |  |  |  |  |  |                |  | LEFT | DOWN | RIGHT |       | QUOTE |       |
+// |  |  |  |  |  |  |                      |      |      |       |       |       |       |
+// |  |  |  |  |  |  |  |                |  |      |      |       |       |       |  BOOT |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &kp MINUS        &sys_reset
-   &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans         &kp UP_ARROW   &trans          &trans           &trans
-   &trans &trans &trans &trans &trans &trans &trans        &trans &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp SINGLE_QUOTE &trans
-   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &trans           &trans
-   &trans &trans        &trans &trans &trans &trans        &trans &trans &trans         &trans         &trans                           &bootloader
+   &trans &trans &trans &trans &trans &trans                      &trans         &trans         &trans          &trans &kp MINUS        &sys_reset
+   &trans &trans &trans &trans &trans &trans &trans        &trans &trans         &kp UP_ARROW   &trans          &trans &trans           &trans
+   &trans &trans &trans &trans &trans &trans &trans        &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &trans &kp SINGLE_QUOTE &trans
+   &trans &trans &trans &trans &trans &trans                      &trans         &trans         &trans          &trans &trans           &trans
+   &trans &trans        &trans &trans &trans &trans        &trans &trans         &trans         &trans                 &trans           &bootloader
                         >;
 
                 };
