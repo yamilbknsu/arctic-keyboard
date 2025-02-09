@@ -7,3 +7,5 @@ jobs:
     with:
       config_path: "zmk-config-arctic/config"
       build_matrix_path: "zmk-config-arctic/build.yaml"
+    env:
+      ZEPHYR_BASE: "zmk-config-arctic/zephyr/"
