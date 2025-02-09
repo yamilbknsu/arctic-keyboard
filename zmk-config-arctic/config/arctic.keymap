@@ -1,0 +1,84 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                base_layer {
+                        display-name = "Base";
+// -----------------------------------------------------------------------------------------
+// | `~     |  1      |  2   |  3      |  4     |  5   |                                                                         |  6  |    7      |  8  |  9  |  0   | PLUS   |
+// | TAB    |  Q      |  W   |  E      |  R     |  T   | DEL |                                                 | BKS             |  Y  |    U      |  I  |  O  |  P   | HOME   |
+// | ESC    |  A      |  S   |  D      |  F     |  G   |  [                                                    |  ]              |  H  |    J      |  K  |  L  |  ;   | END    |
+// | SHIFT  |  Z      |  X   |  C      |  V     |  B   |                                                                         |  N  |    M      |  ,  |  .  |  \   | PGUP   |
+// | CTRL   | GLOBE   |      | ALT     | CMD    | UPP  | SPC |                                                 | ENT             | LWR |   ALT     | CMD |     | CTRL | PGDOWN |
+                        bindings = <
+   &kp GRAVE &kp N1    &kp N2 &kp N3    &kp N4   &kp N5                                                                           &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp EQUAL
+   &kp TAB   &kp Q     &kp W  &kp E     &kp R    &kp T  &kp DEL                                                 &kp BSPC          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp HOME
+   &kp ESC   &kp A     &kp S  &kp D     &kp F    &kp G  &kp LEFT_BRACKET                                        &kp RIGHT_BRACKET &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp END
+   &kp LSHFT &kp Z     &kp X  &kp C     &kp V    &kp B                                                                            &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp PAGE_UP
+   &kp LCTRL &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT            &kp LALT  &kp LGUI &mo 1  &mt LA(LSHIFT) SPACE    &kp RET           &mo 2   &kp RALT  &kp RGUI            &kp RCTRL &kp PAGE_DOWN
+                        >;
+                };
+                raise_layer {
+                        display-name = "Raise";
+// -----------------------------------------------------------------------------------------
+// |  RESET  | BT1         |     BT2     |     BT3     |     BT4     |     BT5    |                        |      |      |      |        |          | |
+// |         |      1      |      2      |      3      |      4      |      5     |  |             | BTCLR |  6   |  7   |  8   |    9   |    0     | |
+// |         |             |             |             |             |            |  |             |       | PREV | PLAY | NEXT | VOL UP | VOL DOWN | |
+// |         |             |             |             |             |            |                        |      |      |      |        |          | |
+// |  BOOT   |             |             |             |             |            |  |             |       |      |      |      |        |          | |
+                        bindings = <
+   &sys_reset  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &trans     &trans     &trans     &trans       &trans       &trans
+   &trans      &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &trans     &bt BT_CLR &kp N6     &kp N7     &kp N8     &kp N9       &kp N0       &trans
+   &trans      &trans        &trans        &trans        &trans        &trans        &trans     &trans     &kp C_PREV &kp C_PLAY &kp C_NEXT &kp C_VOL_UP &kp C_VOL_DN &trans
+   &trans      &trans        &trans        &trans        &trans        &trans                              &trans     &trans     &trans     &trans       &trans       &trans
+   &bootloader               &trans        &trans        &trans        &trans        &trans     &trans     &trans     &trans     &trans     &trans                    &trans
+                        >;
+                };
+
+                lower_layer {
+                        display-name = "Lower";
+                        // -----------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |                      |     |     |      |       | MINUS | RESET |
+// |  |  |  |  |  |  |  |                |  |     |     |  UP  |       |       |       |
+// |  |  |  |  |  |  |  |                |  |     | LEFT| DOWN | RIGHT | QUOTE |       |
+// |  |  |  |  |  |  |                      |     |     |      |       |       |       |
+// |  |  |  |  |  |  |  |                |  |     |     |      |       |       |  BOOT |
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &kp MINUS        &sys_reset
+   &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans         &kp UP_ARROW   &trans          &trans           &trans
+   &trans &trans &trans &trans &trans &trans &trans        &trans &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp SINGLE_QUOTE &trans
+   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &trans           &trans
+   &trans &trans        &trans &trans &trans &trans        &trans &trans &trans         &trans         &trans                           &bootloader
+                        >;
+
+                };
+        };
+};
+
+// TEMPLATE
+// --------
+//                 raise_layer {
+// // -----------------------------------------------------------------------------------------
+// // |  |  |  |  |  |  |                   | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+// // |  |  |  |  |  |  |                   | | | | | | |
+// // |  |  |  |  |  |  |  |              | | | | | | | |
+//                         bindings = <
+//    &trans &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans &trans
+//    &trans &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans
+//    &trans        &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans        &trans
+//                         >;
+//                 };
