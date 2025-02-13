@@ -57,7 +57,7 @@
    &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &kp MINUS        &sys_reset
    &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans         &kp UP_ARROW   &trans          &trans           &trans
    &trans &trans &trans &trans &trans &trans &trans        &trans &trans &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp SINGLE_QUOTE &trans
-   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &trans           &trans
+   &trans &trans &trans &trans &trans &trans                      &trans &trans         &trans         &trans          &kp BACKSLASH    &trans
    &trans &trans        &trans &trans &trans &trans        &trans &trans &trans         &trans         &trans                           &bootloader
                         >;
 
