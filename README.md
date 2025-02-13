@@ -4,7 +4,7 @@ Repo structure:
 - `ergogen` folder: [ergogen](https://github.com/ergogen/ergogen) config file and community footprints used
 - `pcbs` folder: Finished KiCAD PCB files for left and right plates as well as SVG file used for designing the case
 - `case` folder: `obj` file used to generate `.3MF` for 3D printed case.
-- `zmk-config-arctic` folder: [ZMK](https://zmk.dev/) firmware files for nice!nanov2 MCU
+- `config`, `build.yaml` and `zephyr`: [ZMK](https://zmk.dev/) firmware files for nice!nanov2 MCU
 
 ## Assembled Keyboard
 ![Arctic assembled](imgs/arctic-shot.png)

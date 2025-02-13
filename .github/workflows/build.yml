@@ -4,6 +4,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      config_path: "./zmk-config-arctic/config"
-      build_matrix_path: "./zmk-config-arctic/build.yaml"
